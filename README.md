@@ -1,2 +1,3 @@
-# my-portfolio666
-我的个人作品集网站
+# 李教授
+
+静态站点由 EasyPortfolio 生成。
