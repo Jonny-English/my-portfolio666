@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>作品集 / Projects | 32432432432</title>
+    <title>Test Project via Evaluate | 32432432432</title>
     
-    <title>作品集 / Projects - 32432432432</title>
+    <title>Test Project via Evaluate - 32432432432</title>
     <meta name="description" content="432432432">
     <meta name="keywords" content="4324324">
-    <meta property="og:title" content="作品集 / Projects - 32432432432">
+    <meta property="og:title" content="Test Project via Evaluate - 32432432432">
     <meta property="og:description" content="432432432">
     <meta property="og:type" content="website">
     
@@ -503,64 +503,27 @@
         
             <main class="main-content" style="padding-top: 120px;">
                 <div class="container">
-                    <div class="section-header">
-                        <h1>作品集 / Projects</h1>
-                        <p>我完成的项目与实验</p>
-                    </div>
-                    
-            <div class="filter-tabs">
-                <button class="filter-tab active" data-filter="all">全部 / All</button>
-                <button class="filter-tab" data-filter="云端服务与资源调度系统">云端服务与资源调度系统</button><button class="filter-tab" data-filter="高性能计算支撑平台">高性能计算支撑平台</button><button class="filter-tab" data-filter="分布式数据管理系统">分布式数据管理系统</button><button class="filter-tab" data-filter="智能信息处理平台">智能信息处理平台</button>
-            </div>
-        
-                    <div class="projects-grid " style="margin-top: 2rem;">
+                    <a href="../projects/index.html" class="back-link">← 返回作品集 / Back to Projects</a>
+                    <article>
+                        <header style="margin-bottom: 3rem;">
+                            <h1>Test Project via Evaluate</h1>
+                            <div class="tags"></div>
+                        </header>
                         
-            <a href="../projects/project-1768143757285-r9suiqy3r.html" class="card animate-in delay-1" data-tags="云端服务与资源调度系统">
-                <div class="card-image"><img src="../uploads/project/1768186662370-ehj3ibuie.jpg" alt="云端服务与资源调度系统" loading="lazy"></div>
-                <div class="card-content">
-                    <h3 class="card-title">云端服务与资源调度系统</h3>
-                    <p class="card-desc">云端服务与资源调度系统</p>
-                    <div class="tags"><span class="tag">云端服务与资源调度系统</span></div>
-                </div>
-            </a>
-        
-            <a href="../projects/project-1768184111383-zt9kinris.html" class="card animate-in delay-2" data-tags="高性能计算支撑平台">
-                <div class="card-image"><img src="../uploads/project/1768186654293-96b1y0z8v.png" alt="高性能计算支撑平台" loading="lazy"></div>
-                <div class="card-content">
-                    <h3 class="card-title">高性能计算支撑平台</h3>
-                    <p class="card-desc">高性能计算支撑平台</p>
-                    <div class="tags"><span class="tag">高性能计算支撑平台</span></div>
-                </div>
-            </a>
-        
-            <a href="../projects/project-1768184117241-nctbc6ryj.html" class="card animate-in delay-3" data-tags="分布式数据管理系统">
-                <div class="card-image"><img src="../uploads/project/1768186648761-zdabgdies.jpg" alt="分布式数据管理系统" loading="lazy"></div>
-                <div class="card-content">
-                    <h3 class="card-title">分布式数据管理系统</h3>
-                    <p class="card-desc">分布式数据管理系统</p>
-                    <div class="tags"><span class="tag">分布式数据管理系统</span></div>
-                </div>
-            </a>
-        
-            <a href="../projects/project-1768184124810-zxdhoz0va.html" class="card animate-in delay-3" data-tags="智能信息处理平台">
-                <div class="card-image"><img src="../uploads/project/1768186643829-3xnu1fm4r.jpg" alt="智能信息处理平台" loading="lazy"></div>
-                <div class="card-content">
-                    <h3 class="card-title">智能信息处理平台</h3>
-                    <p class="card-desc">智能信息处理平台</p>
-                    <div class="tags"><span class="tag">智能信息处理平台</span></div>
-                </div>
-            </a>
-        
-            <a href="../projects/project-1768321801659-gsgojbeqg.html" class="card animate-in delay-3" data-tags="">
-                
-                <div class="card-content">
-                    <h3 class="card-title">Test Project via Evaluate</h3>
-                    <p class="card-desc">Description set via JS evaluate. **Markdown** supported.</p>
-                    <div class="tags"></div>
-                </div>
-            </a>
-        
-                    </div>
+                        
+                        
+                        <div class="prose prose-editorial">
+                            <p>Description set via JS evaluate. <strong>Markdown</strong> supported.</p>
+
+                        </div>
+                        
+                        
+                            <div style="margin-top: 3rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <a href="https://example.com" class="btn" target="_blank">访问网站 / Visit Site</a>
+                                <a href="https://github.com/test/repo" class="btn btn-outline" target="_blank">查看源码 / View Code</a>
+                            </div>
+                        
+                    </article>
                 </div>
             </main>
             
@@ -598,36 +561,5 @@
         </script>
         
     
-        <script>
-            (function() {
-                const filterTabs = document.querySelectorAll('.filter-tab');
-                const cards = document.querySelectorAll('.card[data-tags]');
-                
-                if (!filterTabs.length || !cards.length) return;
-                
-                filterTabs.forEach(tab => {
-                    tab.addEventListener('click', () => {
-                        const filter = tab.dataset.filter;
-                        
-                        // 更新 active 状态
-                        filterTabs.forEach(t => t.classList.remove('active'));
-                        tab.classList.add('active');
-                        
-                        // 筛选卡片
-                        cards.forEach(card => {
-                            const tags = (card.dataset.tags || '').split(',');
-                            if (filter === 'all' || tags.includes(filter)) {
-                                card.style.display = '';
-                                card.setAttribute('data-filtered', 'false');
-                            } else {
-                                card.setAttribute('data-filtered', 'true');
-                                setTimeout(() => { card.style.display = 'none'; }, 300);
-                            }
-                        });
-                    });
-                });
-            })();
-        </script>
-        
 </body>
 </html>
