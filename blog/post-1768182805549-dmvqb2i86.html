@@ -16,12 +16,12 @@
             @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
             :root, [data-theme="light"] {
-                --bg: #fffbf5;
-                --fg: #1c1917;
-                --muted: #78716c;
-                --accent: #b91c1c;
-                --border: #e7e5e4;
-                --card: #ffffff;
+                --bg: #ffffff;
+                --fg: #111827;
+                --muted: #6b7280;
+                --accent: #FF0080;
+                --border: #e5e7eb;
+                --card: #f9fafb;
                 --font-h: "Playfair Display", "Georgia", "Times New Roman", serif;
                 --font-b: "Playfair Display", "Georgia", "Times New Roman", serif;
                 --radius: 0;
@@ -30,23 +30,23 @@
             }
 
             [data-theme="dark"] {
-                --bg: #1c1917;
-                --fg: #fafaf9;
-                --muted: #a8a29e;
-                --accent: #fca5a5;
-                --border: #44403c;
-                --card: #292524;
+                --bg: #1A1A2E;
+                --fg: #EAEAEA;
+                --muted: #7F8C8D;
+                --accent: #FFFF00;
+                --border: #334155;
+                --card: #16213E;
                 color-scheme: dark;
             }
 
             @media (prefers-color-scheme: dark) {
                 :root:not([data-theme="light"]) {
-                    --bg: #1c1917;
-                    --fg: #fafaf9;
-                    --muted: #a8a29e;
-                    --accent: #fca5a5;
-                    --border: #44403c;
-                    --card: #292524;
+                    --bg: #1A1A2E;
+                    --fg: #EAEAEA;
+                    --muted: #7F8C8D;
+                    --accent: #FFFF00;
+                    --border: #334155;
+                    --card: #16213E;
                     color-scheme: dark;
                 }
             }
