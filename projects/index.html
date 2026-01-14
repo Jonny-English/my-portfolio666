@@ -15,23 +15,23 @@
         @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
         
         :root {
-            --primary: #FF0080;
-            --primary-light: #00FFFF;
-            --background: #1A1A2E;
-            --text: #EAEAEA;
+            --primary: #82AAFF;
+            --primary-light: #1E3A8A;
+            --background: #011627;
+            --text: #D6DEEB;
             --text-muted: #94a3b8;
-            --accent: #FFFF00;
+            --accent: #C792EA;
             --border: #334155;
             --card-bg: #1e293b;
-            --heading-font: "Crimson Pro", Georgia, serif;
-            --body-font: "Space Grotesk", sans-serif;
+            --heading-font: "Geist Sans", -apple-system, sans-serif;
+            --body-font: "Source Serif Pro", Georgia, serif;
             --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
             --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
             --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
             --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
             --radius: 24px;
             --radius-lg: 24px;
-            --spacing-base: 0.75rem;
+            --spacing-base: 1rem;
         }
         
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -96,6 +96,32 @@
             box-shadow: var(--shadow-md);
             opacity: 0.9;
             color: white;
+        }
+        
+        /* Line clamp utilities for text truncation */
+        .line-clamp-1 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+        }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+        }
+        .line-clamp-4 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            overflow: hidden;
         }
         
         /* 响应式基础 */
@@ -457,8 +483,8 @@
                             </div>
                         
                         <div class="magazine-card-content">
-                            <h3>云端服务与资源调度系统</h3>
-                            <p>云端服务与资源调度系统</p>
+                            <h3 class="line-clamp-2">云端服务与资源调度系统</h3>
+                            <p class="line-clamp-3">云端服务与资源调度系统</p>
                         </div>
                     </a>
                 
@@ -469,8 +495,8 @@
                             </div>
                         
                         <div class="magazine-card-content">
-                            <h3>高性能计算支撑平台</h3>
-                            <p>高性能计算支撑平台</p>
+                            <h3 class="line-clamp-2">高性能计算支撑平台</h3>
+                            <p class="line-clamp-3">高性能计算支撑平台</p>
                         </div>
                     </a>
                 
@@ -481,8 +507,8 @@
                             </div>
                         
                         <div class="magazine-card-content">
-                            <h3>分布式数据管理系统</h3>
-                            <p>分布式数据管理系统</p>
+                            <h3 class="line-clamp-2">分布式数据管理系统</h3>
+                            <p class="line-clamp-3">分布式数据管理系统</p>
                         </div>
                     </a>
                 
@@ -493,16 +519,16 @@
                             </div>
                         
                         <div class="magazine-card-content">
-                            <h3>智能信息处理平台</h3>
-                            <p>智能信息处理平台</p>
+                            <h3 class="line-clamp-2">智能信息处理平台</h3>
+                            <p class="line-clamp-3">智能信息处理平台</p>
                         </div>
                     </a>
                 
                     <a href="/projects/project-1768321801659-gsgojbeqg.html" class="magazine-card" style="grid-row: span 1;">
                         
                         <div class="magazine-card-content">
-                            <h3>Test Project via Evaluate</h3>
-                            <p>Description set via JS evaluate. **Markdown** supported.</p>
+                            <h3 class="line-clamp-2">Test Project via Evaluate</h3>
+                            <p class="line-clamp-3">Description set via JS evaluate. **Markdown** supported.</p>
                         </div>
                     </a>
                 
