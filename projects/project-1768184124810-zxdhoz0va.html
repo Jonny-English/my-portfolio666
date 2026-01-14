@@ -130,25 +130,25 @@
         /* 🎨 Design System - Professional Color Palette */
         :root {
             /* Primary Colors */
-            --primary: #166534;
-            --primary-light: #DCFCE7;
+            --primary: #C2410C;
+            --primary-light: #FEF3C7;
             --primary-dark: #1d4ed8;
             
             /* Background & Surface */
-            --bg-primary: #F0FDF4;
+            --bg-primary: #FFFBEB;
             --bg-secondary: #f8fafc;
             --bg-tertiary: #f1f5f9;
             --surface: #ffffff;
             --surface-hover: #f8fafc;
             
             /* Text Colors - WCAG AA Compliant */
-            --text-primary: #14532D;
+            --text-primary: #292524;
             --text-secondary: #475569;
             --text-muted: #64748b;
             --text-inverse: #ffffff;
             
             /* Accent & Semantic Colors */
-            --accent: #22C55E;
+            --accent: #EA580C;
             --accent-light: #fcd34d;
             --success: #059669;
             --warning: #d97706;
@@ -482,326 +482,155 @@
         /* Custom CSS */
         324234324324
     
-            /* Magazine Layout Styles */
+            /* Bento Layout Styles - Clean & Modern */
             body {
-                font-family: 'Playfair Display', Georgia, serif;
-            }
-            
-            .magazine-header {
-                position: sticky;
-                top: 0;
-                background: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(10px);
-                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-                z-index: 100;
-                padding: 1.5rem 0;
-            }
-            
-            .magazine-nav {
-                max-width: 1400px;
-                margin: 0 auto;
-                padding: 0 2rem;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-            
-            .magazine-logo {
-                font-size: 2rem;
-                font-weight: 700;
-                letter-spacing: 0.05em;
-                color: var(--text);
-            }
-            
-            .magazine-menu {
-                display: flex;
-                gap: 3rem;
-                font-family: sans-serif;
-                font-size: 0.95rem;
-                text-transform: uppercase;
-                letter-spacing: 0.1em;
-            }
-            
-            .magazine-menu a {
-                color: var(--text);
-                transition: opacity 0.2s;
-            }
-            
-            .magazine-menu a:hover {
-                opacity: 0.6;
-            }
-            
-            .magazine-hero {
-                height: 100vh;
-                background-size: cover;
-                background-position: center;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                color: white;
-            }
-            
-            .magazine-hero-content {
-                max-width: 800px;
+                background: #f8fafc;
+                min-height: 100vh;
                 padding: 2rem;
             }
             
-            .magazine-hero-title {
-                font-size: 6rem;
-                font-weight: 700;
-                margin-bottom: 1rem;
-                text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+            /* Dark mode body background */
+            .dark body,
+            html.dark body {
+                background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             }
             
-            .magazine-hero-bio {
-                font-size: 1.5rem;
-                margin-bottom: 2rem;
-                font-family: sans-serif;
-                font-weight: 300;
-            }
-            
-            .magazine-container {
+            .bento-container {
                 max-width: 1400px;
                 margin: 0 auto;
-                padding: 0 2rem;
             }
             
-            .magazine-section {
-                padding: 6rem 0;
-            }
-            
-            .magazine-section-alt {
-                background: var(--primary-light);
-            }
-            
-            .magazine-section-title {
-                font-size: 4rem;
-                font-weight: 700;
-                margin-bottom: 3rem;
-                text-align: center;
-            }
-            
-            .magazine-title {
-                font-size: 5rem;
-                font-weight: 700;
-                margin: 4rem 0;
-                text-align: center;
-            }
-            
-            .magazine-masonry {
+            .bento-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-                gap: 2rem;
-                grid-auto-rows: 250px;
+                grid-template-columns: repeat(4, 1fr);
+                grid-auto-rows: 200px;
+                gap: 1.5rem;
             }
             
-            .magazine-card {
-                position: relative;
-                overflow: hidden;
-                border-radius: 0;
-                transition: transform 0.3s;
+            .bento-tile {
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+                text-decoration: none;
             }
             
-            .magazine-card:hover {
+            .bento-tile:hover {
                 transform: translateY(-5px);
             }
             
-            .magazine-card-image {
-                position: absolute;
-                inset: 0;
+            .profile-tile {
+                grid-column: span 2;
+                grid-row: span 2;
+                text-align: center;
+                justify-content: center;
             }
             
-            .magazine-card-image img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
+            .featured-project {
+                grid-column: span 2;
+                grid-row: span 3;
+                padding: 0;
             }
             
-            .magazine-card-content {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
+            .project-tile {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            
+            .blog-tile {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            
+            .more-tile {
+                font-weight: 600;
+                font-size: 1.1rem;
+            }
+            
+            /* 内页样式 */
+            .bento-page {
+                max-width: 900px;
+                margin: 0 auto;
                 padding: 2rem;
-                background: linear-gradient(transparent, rgba(0,0,0,0.9));
-                color: white;
             }
             
-            .magazine-card-content h3 {
-                font-size: 1.5rem;
-                margin-bottom: 0.5rem;
-            }
-            
-            .magazine-card-content p {
-                font-family: sans-serif;
-                font-size: 0.9rem;
-                opacity: 0.9;
-            }
-            
-            .magazine-blog-grid {
+            .bento-projects-grid,
+            .bento-blog-grid {
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                gap: 3rem;
+                gap: 1.5rem;
             }
             
-            .magazine-blog-card {
-                display: block;
-                transition: opacity 0.2s;
+            /* Prose styles for blog content */
+            .prose h1,
+            .prose h2,
+            .prose h3 {
+                color: inherit;
+                margin: 2rem 0 1rem;
             }
             
-            .magazine-blog-card:hover {
-                opacity: 0.8;
+            .prose p {
+                margin: 1rem 0;
             }
             
-            .magazine-blog-card.featured {
-                grid-column: span 2;
+            .prose a {
+                color: #3b82f6;
+                text-decoration: underline;
             }
             
-            .magazine-blog-image {
-                aspect-ratio: 16/9;
-                overflow: hidden;
-                margin-bottom: 1.5rem;
+            .prose code {
+                background: rgba(0, 0, 0, 0.05);
+                padding: 0.2rem 0.4rem;
+                border-radius: 0.25rem;
             }
             
-            .magazine-blog-image img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
+            .dark .prose code {
+                background: rgba(255, 255, 255, 0.1);
             }
             
-            .magazine-blog-content h3 {
-                font-size: 2rem;
-                margin-bottom: 1rem;
+            .prose pre {
+                background: #1e293b;
+                color: #e2e8f0;
+                padding: 1rem;
+                border-radius: 0.5rem;
+                overflow-x: auto;
+                margin: 1rem 0;
             }
             
-            .magazine-blog-excerpt {
-                font-family: sans-serif;
-                color: var(--text-muted);
-                margin-bottom: 1rem;
-                line-height: 1.6;
-            }
-            
-            .magazine-blog-date {
-                font-family: sans-serif;
-                font-size: 0.85rem;
-                text-transform: uppercase;
-                letter-spacing: 0.1em;
-                color: var(--text-muted);
-            }
-            
-            .magazine-article {
-                max-width: 800px;
-                margin: 4rem auto;
-            }
-            
-            .magazine-feature-image {
-                margin-bottom: 3rem;
-            }
-            
-            .magazine-feature-image img {
-                width: 100%;
-                height: auto;
-            }
-            
-            .magazine-headline {
-                font-size: 4rem;
-                font-weight: 700;
-                margin-bottom: 1.5rem;
-                line-height: 1.1;
-            }
-            
-            .magazine-lead {
-                font-size: 1.5rem;
-                line-height: 1.8;
-                margin-bottom: 2rem;
-                font-family: sans-serif;
-                color: var(--text-muted);
-            }
-            
-            .magazine-meta {
-                font-family: sans-serif;
-                font-size: 0.9rem;
-                color: var(--text-muted);
-                margin: 2rem 0;
-            }
-            
-            .magazine-tag {
-                display: inline-block;
-            }
-            
-            .magazine-date {
-                font-family: sans-serif;
-                font-size: 0.9rem;
-                text-transform: uppercase;
-                letter-spacing: 0.1em;
-                color: var(--text-muted);
-                margin-bottom: 2rem;
-            }
-            
-            .magazine-body {
-                font-size: 1.125rem;
-                line-height: 1.8;
-                font-family: Georgia, serif;
-            }
-            
-            .magazine-actions {
-                display: flex;
-                gap: 2rem;
-                margin: 3rem 0;
-            }
-            
-            .magazine-link {
-                font-family: sans-serif;
-                font-size: 0.95rem;
-                text-transform: uppercase;
-                letter-spacing: 0.1em;
-                padding: 1rem 2rem;
-                background: var(--primary);
-                color: white;
-                display: inline-block;
-                transition: opacity 0.2s;
-            }
-            
-            .magazine-link:hover {
-                opacity: 0.8;
-            }
-            
-            .magazine-link.secondary {
-                background: transparent;
-                border: 2px solid var(--primary);
-                color: var(--primary);
-            }
-            
-            .magazine-footer {
-                text-align: center;
-                padding: 3rem 0;
-                font-family: sans-serif;
-                font-size: 0.9rem;
-                color: var(--text-muted);
-                border-top: 1px solid var(--border);
+            @media (max-width: 1024px) {
+                .bento-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                
+                .profile-tile {
+                    grid-column: span 2;
+                }
+                
+                .featured-project {
+                    grid-column: span 2;
+                }
             }
             
             @media (max-width: 768px) {
-                .magazine-hero-title {
-                    font-size: 3rem;
+                body {
+                    padding: 1rem;
                 }
                 
-                .magazine-section-title,
-                .magazine-title {
-                    font-size: 2.5rem;
-                }
-                
-                .magazine-headline {
-                    font-size: 2rem;
-                }
-                
-                .magazine-masonry {
+                .bento-grid {
                     grid-template-columns: 1fr;
+                    grid-auto-rows: auto;
+                    gap: 1rem;
                 }
                 
-                .magazine-blog-card.featured {
+                .bento-tile {
+                    padding: 1.5rem;
+                }
+                
+                .profile-tile,
+                .featured-project,
+                .project-tile,
+                .blog-tile {
                     grid-column: span 1;
+                    grid-row: span 1;
                 }
             }
         </style>
@@ -809,42 +638,39 @@
 <body>
 
             
-            <header class="magazine-header">
-                <nav class="magazine-nav">
-                    <a href="../index.html" class="magazine-logo">PORTFOLIO</a>
-                    <div class="magazine-menu">
-                        <a href="../index.html">首页</a>
-                        <a href="../projects/index.html">作品</a>
-                        <a href="../blog/index.html">阅读</a>
-                    </div>
-                </nav>
-            </header>
+            <nav class="max-w-4xl mx-auto mb-8 px-4 md:px-8 flex justify-between items-center">
+                <a href="./index.html" 
+                   class="px-4 py-2 rounded-xl text-sm font-medium bg-white/90 dark:bg-slate-800/90 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors backdrop-blur-sm">
+                    ← 返回首页
+                </a>
+                <div class="flex gap-3">
+                    <a href="./projects/index.html" class="px-4 py-2 rounded-xl text-sm font-medium bg-white/90 dark:bg-slate-800/90 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors backdrop-blur-sm">项目</a>
+                    <a href="./blog/index.html" class="px-4 py-2 rounded-xl text-sm font-medium bg-white/90 dark:bg-slate-800/90 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors backdrop-blur-sm">博客</a>
+                </div>
+            </nav>
         
-            <main class="magazine-container">
-                <article class="magazine-article">
+            <main class="bento-page">
+                <article class="group relative overflow-hidden rounded-3xl bg-white/95 dark:bg-slate-900/95 border border-slate-200 dark:border-slate-700 shadow-lg p-8 md:p-12">
                     
-                        <div class="magazine-feature-image">
-                            <img src="../uploads/project/1768186643829-3xnu1fm4r.jpg" alt="智能信息处理平台">
+                        <img src="./uploads/project/1768186643829-3xnu1fm4r.jpg" 
+                             alt="智能信息处理平台" 
+                             class="w-full rounded-2xl mb-8"
+                             onerror="this.style.display='none';this.parentElement.querySelector('.img-fallback')?.classList.remove('hidden')">
+                        <div class="img-fallback hidden w-full h-48 bg-slate-100 dark:bg-slate-800 rounded-2xl mb-8 flex items-center justify-center">
+                            <span class="text-slate-400">图片加载失败</span>
                         </div>
                     
-                    <div class="magazine-content">
-                        <h1 class="magazine-headline">智能信息处理平台</h1>
-                        <div class="magazine-meta">
-                            <span class="magazine-tag">智能信息处理平台</span>
-                        </div>
-                        <p class="magazine-lead">智能信息处理平台</p>
-                        <div class="magazine-actions">
-                            <a href="智能信息处理平台" target="_blank" class="magazine-link">访问项目 →</a>
-                            <a href="智能信息处理平台" target="_blank" class="magazine-link secondary">源代码 →</a>
-                        </div>
+                    <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-50 mb-4">智能信息处理平台</h1>
+                    <div class="flex gap-2 flex-wrap mb-6">
+                        <span class="px-3 py-1 rounded-full text-sm font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">智能信息处理平台</span>
+                    </div>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8">智能信息处理平台</p>
+                    <div class="flex gap-4 flex-wrap">
+                        <a href="智能信息处理平台" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 rounded-xl font-semibold bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors">访问网站</a>
+                        <a href="智能信息处理平台" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 rounded-xl font-semibold bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">查看源码</a>
                     </div>
                 </article>
             </main>
-            
-            <footer class="magazine-footer">
-                <p>© 2026 Portfolio</p>
-            </footer>
-        
         
 </body>
 </html>
