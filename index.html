@@ -15,12 +15,12 @@
         @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
         
         :root {
-            --primary: #39FF14;
-            --primary-light: #FF9500;
-            --background: #000000;
-            --text: #00FF41;
+            --primary: #FF0080;
+            --primary-light: #00FFFF;
+            --background: #1A1A2E;
+            --text: #EAEAEA;
             --text-muted: #94a3b8;
-            --accent: #FF1744;
+            --accent: #FFFF00;
             --border: #334155;
             --card-bg: #1e293b;
             --heading-font: "Crimson Pro", Georgia, serif;
@@ -107,194 +107,414 @@
         /* Custom CSS */
         324234324324
     
-            /* Classic Layout Specific Styles */
-            .prose {
-                color: var(--text);
+            /* Magazine Layout Styles */
+            body {
+                font-family: 'Playfair Display', Georgia, serif;
             }
             
-            .prose h1, .prose h2, .prose h3 {
-                color: var(--text);
+            .magazine-header {
+                position: sticky;
+                top: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                z-index: 100;
+                padding: 1.5rem 0;
+            }
+            
+            .magazine-nav {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 0 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .magazine-logo {
+                font-size: 2rem;
                 font-weight: 700;
+                letter-spacing: 0.05em;
+                color: var(--text);
             }
             
-            .prose a {
-                color: var(--primary);
-                text-decoration: underline;
+            .magazine-menu {
+                display: flex;
+                gap: 3rem;
+                font-family: sans-serif;
+                font-size: 0.95rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
             }
             
-            .prose a:hover {
-                color: var(--accent);
+            .magazine-menu a {
+                color: var(--text);
+                transition: opacity 0.2s;
             }
             
-            .prose img {
-                border-radius: var(--radius);
+            .magazine-menu a:hover {
+                opacity: 0.6;
+            }
+            
+            .magazine-hero {
+                height: 100vh;
+                background-size: cover;
+                background-position: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                color: white;
+            }
+            
+            .magazine-hero-content {
+                max-width: 800px;
+                padding: 2rem;
+            }
+            
+            .magazine-hero-title {
+                font-size: 6rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+            }
+            
+            .magazine-hero-bio {
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+                font-family: sans-serif;
+                font-weight: 300;
+            }
+            
+            .magazine-container {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 0 2rem;
+            }
+            
+            .magazine-section {
+                padding: 6rem 0;
+            }
+            
+            .magazine-section-alt {
+                background: var(--primary-light);
+            }
+            
+            .magazine-section-title {
+                font-size: 4rem;
+                font-weight: 700;
+                margin-bottom: 3rem;
+                text-align: center;
+            }
+            
+            .magazine-title {
+                font-size: 5rem;
+                font-weight: 700;
+                margin: 4rem 0;
+                text-align: center;
+            }
+            
+            .magazine-masonry {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+                gap: 2rem;
+                grid-auto-rows: 250px;
+            }
+            
+            .magazine-card {
+                position: relative;
+                overflow: hidden;
+                border-radius: 0;
+                transition: transform 0.3s;
+            }
+            
+            .magazine-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .magazine-card-image {
+                position: absolute;
+                inset: 0;
+            }
+            
+            .magazine-card-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+            .magazine-card-content {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 2rem;
+                background: linear-gradient(transparent, rgba(0,0,0,0.9));
+                color: white;
+            }
+            
+            .magazine-card-content h3 {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .magazine-card-content p {
+                font-family: sans-serif;
+                font-size: 0.9rem;
+                opacity: 0.9;
+            }
+            
+            .magazine-blog-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 3rem;
+            }
+            
+            .magazine-blog-card {
+                display: block;
+                transition: opacity 0.2s;
+            }
+            
+            .magazine-blog-card:hover {
+                opacity: 0.8;
+            }
+            
+            .magazine-blog-card.featured {
+                grid-column: span 2;
+            }
+            
+            .magazine-blog-image {
+                aspect-ratio: 16/9;
+                overflow: hidden;
+                margin-bottom: 1.5rem;
+            }
+            
+            .magazine-blog-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+            .magazine-blog-content h3 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .magazine-blog-excerpt {
+                font-family: sans-serif;
+                color: var(--text-muted);
+                margin-bottom: 1rem;
+                line-height: 1.6;
+            }
+            
+            .magazine-blog-date {
+                font-family: sans-serif;
+                font-size: 0.85rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: var(--text-muted);
+            }
+            
+            .magazine-article {
+                max-width: 800px;
+                margin: 4rem auto;
+            }
+            
+            .magazine-feature-image {
+                margin-bottom: 3rem;
+            }
+            
+            .magazine-feature-image img {
+                width: 100%;
+                height: auto;
+            }
+            
+            .magazine-headline {
+                font-size: 4rem;
+                font-weight: 700;
+                margin-bottom: 1.5rem;
+                line-height: 1.1;
+            }
+            
+            .magazine-lead {
+                font-size: 1.5rem;
+                line-height: 1.8;
+                margin-bottom: 2rem;
+                font-family: sans-serif;
+                color: var(--text-muted);
+            }
+            
+            .magazine-meta {
+                font-family: sans-serif;
+                font-size: 0.9rem;
+                color: var(--text-muted);
                 margin: 2rem 0;
             }
             
-            .prose code {
-                background: var(--primary-light);
-                padding: 0.2rem 0.4rem;
-                border-radius: 4px;
-                font-size: 0.9em;
+            .magazine-tag {
+                display: inline-block;
             }
             
-            .prose pre {
-                background: var(--card-bg);
-                padding: 1rem;
-                border-radius: var(--radius);
-                overflow-x: auto;
+            .magazine-date {
+                font-family: sans-serif;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: var(--text-muted);
+                margin-bottom: 2rem;
             }
             
-            .prose pre code {
-                background: none;
-                padding: 0;
+            .magazine-body {
+                font-size: 1.125rem;
+                line-height: 1.8;
+                font-family: Georgia, serif;
             }
             
-            .button-outline {
+            .magazine-actions {
+                display: flex;
+                gap: 2rem;
+                margin: 3rem 0;
+            }
+            
+            .magazine-link {
+                font-family: sans-serif;
+                font-size: 0.95rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                padding: 1rem 2rem;
+                background: var(--primary);
+                color: white;
+                display: inline-block;
+                transition: opacity 0.2s;
+            }
+            
+            .magazine-link:hover {
+                opacity: 0.8;
+            }
+            
+            .magazine-link.secondary {
                 background: transparent;
                 border: 2px solid var(--primary);
                 color: var(--primary);
             }
             
-            .button-outline:hover {
-                background: var(--primary);
-                color: white;
+            .magazine-footer {
+                text-align: center;
+                padding: 3rem 0;
+                font-family: sans-serif;
+                font-size: 0.9rem;
+                color: var(--text-muted);
+                border-top: 1px solid var(--border);
+            }
+            
+            @media (max-width: 768px) {
+                .magazine-hero-title {
+                    font-size: 3rem;
+                }
+                
+                .magazine-section-title,
+                .magazine-title {
+                    font-size: 2.5rem;
+                }
+                
+                .magazine-headline {
+                    font-size: 2rem;
+                }
+                
+                .magazine-masonry {
+                    grid-template-columns: 1fr;
+                }
+                
+                .magazine-blog-card.featured {
+                    grid-column: span 1;
+                }
             }
         </style>
 </head>
 <body>
 
             
-            <header class="sticky top-0 bg-background/95 backdrop-blur-sm border-b border-border z-50">
-                <nav class="container flex items-center justify-between h-16">
-                    <a href="/" class="text-xl font-bold hover:text-primary transition-colors">Portfolio</a>
-                    <div class="flex gap-6">
-                        <a href="/" class="hover:text-primary transition-colors">首页</a>
-                        <a href="/projects/" class="hover:text-primary transition-colors">项目</a>
-                        <a href="/blog/" class="hover:text-primary transition-colors">博客</a>
+            <section class="magazine-hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/uploads/avatar/1768184155838-eddvvh2gb.JPG');">
+                <div class="magazine-hero-content">
+                    <h1 class="magazine-hero-title">李教授</h1>
+                    <p class="magazine-hero-bio">计算机专家</p>
+                    <div class="social-links"><a href="github.com" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a><a href="X.com" target="_blank" rel="noopener noreferrer" class="social-link">Twitter / X</a><a href="Linkedln.com" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a><a href="mailto:17337369@qq.com"  class="social-link">Email</a><a href="website.com" target="_blank" rel="noopener noreferrer" class="social-link">Personal Website</a></div>
+                </div>
+            </section>
+        
+            
+            <header class="magazine-header">
+                <nav class="magazine-nav">
+                    <a href="/" class="magazine-logo">PORTFOLIO</a>
+                    <div class="magazine-menu">
+                        <a href="/">首页</a>
+                        <a href="/projects/">作品</a>
+                        <a href="/blog/">阅读</a>
                     </div>
                 </nav>
             </header>
         
             
-            <section class="section bg-gradient-to-b from-primary-light/20 to-background">
-                <div class="container">
-                    <div class="grid md:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h1 class="text-6xl font-bold mb-4 leading-tight">李教授</h1>
-                            <p class="text-xl text-muted-foreground mb-8">计算机专家</p>
-                            <div class="social-links"><a href="github.com" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a><a href="X.com" target="_blank" rel="noopener noreferrer" class="social-link">Twitter / X</a><a href="Linkedln.com" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a><a href="mailto:17337369@qq.com"  class="social-link">Email</a><a href="website.com" target="_blank" rel="noopener noreferrer" class="social-link">Personal Website</a></div>
-                        </div>
-                        
-                            <div class="flex justify-center">
-                                <img src="/uploads/avatar/1768184155838-eddvvh2gb.JPG" alt="李教授" 
-                                     class="w-64 h-64 rounded-full object-cover shadow-2xl ring-4 ring-primary/10">
-                            </div>
-                        
-                    </div>
-                </div>
-            </section>
-        
-            
-            <section class="section">
-                <div class="container">
-                    <h2 class="text-4xl font-bold mb-12 text-center">精选项目</h2>
+            <section class="magazine-section">
+                <div class="magazine-container">
+                    <h2 class="magazine-section-title">精选作品</h2>
                     
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="magazine-masonry">
                 
-                    <a href="/projects/project-1768143757285-r9suiqy3r.html" class="group block">
-                        <article class="bg-card-bg rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                            
-                                <div class="aspect-video overflow-hidden">
-                                    <img src="/uploads/project/1768186662370-ehj3ibuie.jpg" alt="云端服务与资源调度系统" 
-                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                                </div>
-                            
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                                    云端服务与资源调度系统
-                                </h3>
-                                <p class="text-muted-foreground mb-4">云端服务与资源调度系统</p>
-                                <div class="flex gap-2 flex-wrap">
-                                    <span class="tag">云端服务与资源调度系统</span>
-                                </div>
+                    <a href="/projects/project-1768143757285-r9suiqy3r.html" class="magazine-card" style="grid-row: span 2;">
+                        
+                            <div class="magazine-card-image">
+                                <img src="/uploads/project/1768186662370-ehj3ibuie.jpg" alt="云端服务与资源调度系统">
                             </div>
-                        </article>
+                        
+                        <div class="magazine-card-content">
+                            <h3>云端服务与资源调度系统</h3>
+                            <p>云端服务与资源调度系统</p>
+                        </div>
                     </a>
                 
-                    <a href="/projects/project-1768184111383-zt9kinris.html" class="group block">
-                        <article class="bg-card-bg rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                            
-                                <div class="aspect-video overflow-hidden">
-                                    <img src="/uploads/project/1768186654293-96b1y0z8v.png" alt="高性能计算支撑平台" 
-                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                                </div>
-                            
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                                    高性能计算支撑平台
-                                </h3>
-                                <p class="text-muted-foreground mb-4">高性能计算支撑平台</p>
-                                <div class="flex gap-2 flex-wrap">
-                                    <span class="tag">高性能计算支撑平台</span>
-                                </div>
+                    <a href="/projects/project-1768184111383-zt9kinris.html" class="magazine-card" style="grid-row: span 1;">
+                        
+                            <div class="magazine-card-image">
+                                <img src="/uploads/project/1768186654293-96b1y0z8v.png" alt="高性能计算支撑平台">
                             </div>
-                        </article>
+                        
+                        <div class="magazine-card-content">
+                            <h3>高性能计算支撑平台</h3>
+                            <p>高性能计算支撑平台</p>
+                        </div>
                     </a>
                 
-                    <a href="/projects/project-1768184117241-nctbc6ryj.html" class="group block">
-                        <article class="bg-card-bg rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                            
-                                <div class="aspect-video overflow-hidden">
-                                    <img src="/uploads/project/1768186648761-zdabgdies.jpg" alt="分布式数据管理系统" 
-                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                                </div>
-                            
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                                    分布式数据管理系统
-                                </h3>
-                                <p class="text-muted-foreground mb-4">分布式数据管理系统</p>
-                                <div class="flex gap-2 flex-wrap">
-                                    <span class="tag">分布式数据管理系统</span>
-                                </div>
+                    <a href="/projects/project-1768184117241-nctbc6ryj.html" class="magazine-card" style="grid-row: span 1;">
+                        
+                            <div class="magazine-card-image">
+                                <img src="/uploads/project/1768186648761-zdabgdies.jpg" alt="分布式数据管理系统">
                             </div>
-                        </article>
+                        
+                        <div class="magazine-card-content">
+                            <h3>分布式数据管理系统</h3>
+                            <p>分布式数据管理系统</p>
+                        </div>
                     </a>
                 
-                    <a href="/projects/project-1768184124810-zxdhoz0va.html" class="group block">
-                        <article class="bg-card-bg rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                            
-                                <div class="aspect-video overflow-hidden">
-                                    <img src="/uploads/project/1768186643829-3xnu1fm4r.jpg" alt="智能信息处理平台" 
-                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                                </div>
-                            
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                                    智能信息处理平台
-                                </h3>
-                                <p class="text-muted-foreground mb-4">智能信息处理平台</p>
-                                <div class="flex gap-2 flex-wrap">
-                                    <span class="tag">智能信息处理平台</span>
-                                </div>
+                    <a href="/projects/project-1768184124810-zxdhoz0va.html" class="magazine-card" style="grid-row: span 2;">
+                        
+                            <div class="magazine-card-image">
+                                <img src="/uploads/project/1768186643829-3xnu1fm4r.jpg" alt="智能信息处理平台">
                             </div>
-                        </article>
+                        
+                        <div class="magazine-card-content">
+                            <h3>智能信息处理平台</h3>
+                            <p>智能信息处理平台</p>
+                        </div>
                     </a>
                 
-                    <a href="/projects/project-1768321801659-gsgojbeqg.html" class="group block">
-                        <article class="bg-card-bg rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                            
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                                    Test Project via Evaluate
-                                </h3>
-                                <p class="text-muted-foreground mb-4">Description set via JS evaluate. **Markdown** supported.</p>
-                                <div class="flex gap-2 flex-wrap">
-                                    
-                                </div>
-                            </div>
-                        </article>
+                    <a href="/projects/project-1768321801659-gsgojbeqg.html" class="magazine-card" style="grid-row: span 1;">
+                        
+                        <div class="magazine-card-content">
+                            <h3>Test Project via Evaluate</h3>
+                            <p>Description set via JS evaluate. **Markdown** supported.</p>
+                        </div>
                     </a>
                 
             </div>
@@ -303,59 +523,49 @@
             </section>
         
             
-            <section class="section bg-primary-light/10">
-                <div class="container">
-                    <h2 class="text-4xl font-bold mb-12 text-center">最新文章</h2>
-                    <div class="grid md:grid-cols-3 gap-8">
+            <section class="magazine-section magazine-section-alt">
+                <div class="magazine-container">
+                    <h2 class="magazine-section-title">最新文章</h2>
+                    <div class="magazine-blog-grid">
                         
-                            <a href="/blog/post-1768181946234-8eyaassap.html" class="group block">
-                                <article class="bg-card-bg rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                                    <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                                        面向大数据环境的分布式存储系统性能分析
-                                    </h3>
-                                    <p class="text-sm text-muted-foreground mb-3">2026年1月12日</p>
-                                    <p class="text-muted-foreground mb-4">面向大数据环境的分布式存储系统性能分析</p>
-                                    <div class="flex gap-2 flex-wrap">
-                                        <span class="tag">test</span><span class="tag">automated</span>
-                                    </div>
-                                </article>
-                            </a>
-                        
-                            <a href="/blog/post-1768182805549-dmvqb2i86.html" class="group block">
-                                <article class="bg-card-bg rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                                    <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                                        基于深度学习的图像识别算法优化研究
-                                    </h3>
-                                    <p class="text-sm text-muted-foreground mb-3">2026年1月12日</p>
-                                    <p class="text-muted-foreground mb-4">基于深度学习的图像识别算法优化研究</p>
-                                    <div class="flex gap-2 flex-wrap">
-                                        <span class="tag">基于深度学习的图像识别算法优化研究</span>
-                                    </div>
-                                </article>
-                            </a>
-                        
-                            <a href="/blog/post-1768324624718-z7rl17pi4.html" class="group block">
-                                <article class="bg-card-bg rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                                    <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                                        666
-                                    </h3>
-                                    <p class="text-sm text-muted-foreground mb-3">2026年1月14日</p>
-                                    <p class="text-muted-foreground mb-4">062</p>
-                                    <div class="flex gap-2 flex-wrap">
-                                        <span class="tag">511</span>
-                                    </div>
-                                </article>
-                            </a>
-                        
+            <a href="/blog/post-1768181946234-8eyaassap.html" class="magazine-blog-card featured">
+                
+                <div class="magazine-blog-content">
+                    <h3>面向大数据环境的分布式存储系统性能分析</h3>
+                    <p class="magazine-blog-excerpt">面向大数据环境的分布式存储系统性能分析</p>
+                    <p class="magazine-blog-date">2026年1月12日</p>
+                </div>
+            </a>
+        
+            <a href="/blog/post-1768182805549-dmvqb2i86.html" class="magazine-blog-card ">
+                
+                    <div class="magazine-blog-image">
+                        <img src="/uploads/blog/1768186678913-x6fbreev4.jpg" alt="基于深度学习的图像识别算法优化研究">
+                    </div>
+                
+                <div class="magazine-blog-content">
+                    <h3>基于深度学习的图像识别算法优化研究</h3>
+                    <p class="magazine-blog-excerpt">基于深度学习的图像识别算法优化研究</p>
+                    <p class="magazine-blog-date">2026年1月12日</p>
+                </div>
+            </a>
+        
+            <a href="/blog/post-1768324624718-z7rl17pi4.html" class="magazine-blog-card ">
+                
+                <div class="magazine-blog-content">
+                    <h3>666</h3>
+                    <p class="magazine-blog-excerpt">062</p>
+                    <p class="magazine-blog-date">2026年1月14日</p>
+                </div>
+            </a>
+        
                     </div>
                 </div>
             </section>
         
             
-            <footer class="section border-t border-border">
-                <div class="container text-center text-muted-foreground">
-                    <p>© 2026 Portfolio. Generated by EasyPortfolio.</p>
-                </div>
+            <footer class="magazine-footer">
+                <p>© 2026 Portfolio</p>
             </footer>
         
         

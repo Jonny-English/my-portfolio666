@@ -15,12 +15,12 @@
         @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
         
         :root {
-            --primary: #39FF14;
-            --primary-light: #FF9500;
-            --background: #000000;
-            --text: #00FF41;
+            --primary: #FF0080;
+            --primary-light: #00FFFF;
+            --background: #1A1A2E;
+            --text: #EAEAEA;
             --text-muted: #94a3b8;
-            --accent: #FF1744;
+            --accent: #FFFF00;
             --border: #334155;
             --card-bg: #1e293b;
             --heading-font: "Crimson Pro", Georgia, serif;
@@ -107,94 +107,367 @@
         /* Custom CSS */
         324234324324
     
-            /* Classic Layout Specific Styles */
-            .prose {
-                color: var(--text);
+            /* Magazine Layout Styles */
+            body {
+                font-family: 'Playfair Display', Georgia, serif;
             }
             
-            .prose h1, .prose h2, .prose h3 {
-                color: var(--text);
+            .magazine-header {
+                position: sticky;
+                top: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                z-index: 100;
+                padding: 1.5rem 0;
+            }
+            
+            .magazine-nav {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 0 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .magazine-logo {
+                font-size: 2rem;
                 font-weight: 700;
+                letter-spacing: 0.05em;
+                color: var(--text);
             }
             
-            .prose a {
-                color: var(--primary);
-                text-decoration: underline;
+            .magazine-menu {
+                display: flex;
+                gap: 3rem;
+                font-family: sans-serif;
+                font-size: 0.95rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
             }
             
-            .prose a:hover {
-                color: var(--accent);
+            .magazine-menu a {
+                color: var(--text);
+                transition: opacity 0.2s;
             }
             
-            .prose img {
-                border-radius: var(--radius);
+            .magazine-menu a:hover {
+                opacity: 0.6;
+            }
+            
+            .magazine-hero {
+                height: 100vh;
+                background-size: cover;
+                background-position: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                color: white;
+            }
+            
+            .magazine-hero-content {
+                max-width: 800px;
+                padding: 2rem;
+            }
+            
+            .magazine-hero-title {
+                font-size: 6rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+            }
+            
+            .magazine-hero-bio {
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+                font-family: sans-serif;
+                font-weight: 300;
+            }
+            
+            .magazine-container {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 0 2rem;
+            }
+            
+            .magazine-section {
+                padding: 6rem 0;
+            }
+            
+            .magazine-section-alt {
+                background: var(--primary-light);
+            }
+            
+            .magazine-section-title {
+                font-size: 4rem;
+                font-weight: 700;
+                margin-bottom: 3rem;
+                text-align: center;
+            }
+            
+            .magazine-title {
+                font-size: 5rem;
+                font-weight: 700;
+                margin: 4rem 0;
+                text-align: center;
+            }
+            
+            .magazine-masonry {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+                gap: 2rem;
+                grid-auto-rows: 250px;
+            }
+            
+            .magazine-card {
+                position: relative;
+                overflow: hidden;
+                border-radius: 0;
+                transition: transform 0.3s;
+            }
+            
+            .magazine-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .magazine-card-image {
+                position: absolute;
+                inset: 0;
+            }
+            
+            .magazine-card-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+            .magazine-card-content {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 2rem;
+                background: linear-gradient(transparent, rgba(0,0,0,0.9));
+                color: white;
+            }
+            
+            .magazine-card-content h3 {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .magazine-card-content p {
+                font-family: sans-serif;
+                font-size: 0.9rem;
+                opacity: 0.9;
+            }
+            
+            .magazine-blog-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 3rem;
+            }
+            
+            .magazine-blog-card {
+                display: block;
+                transition: opacity 0.2s;
+            }
+            
+            .magazine-blog-card:hover {
+                opacity: 0.8;
+            }
+            
+            .magazine-blog-card.featured {
+                grid-column: span 2;
+            }
+            
+            .magazine-blog-image {
+                aspect-ratio: 16/9;
+                overflow: hidden;
+                margin-bottom: 1.5rem;
+            }
+            
+            .magazine-blog-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+            .magazine-blog-content h3 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .magazine-blog-excerpt {
+                font-family: sans-serif;
+                color: var(--text-muted);
+                margin-bottom: 1rem;
+                line-height: 1.6;
+            }
+            
+            .magazine-blog-date {
+                font-family: sans-serif;
+                font-size: 0.85rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: var(--text-muted);
+            }
+            
+            .magazine-article {
+                max-width: 800px;
+                margin: 4rem auto;
+            }
+            
+            .magazine-feature-image {
+                margin-bottom: 3rem;
+            }
+            
+            .magazine-feature-image img {
+                width: 100%;
+                height: auto;
+            }
+            
+            .magazine-headline {
+                font-size: 4rem;
+                font-weight: 700;
+                margin-bottom: 1.5rem;
+                line-height: 1.1;
+            }
+            
+            .magazine-lead {
+                font-size: 1.5rem;
+                line-height: 1.8;
+                margin-bottom: 2rem;
+                font-family: sans-serif;
+                color: var(--text-muted);
+            }
+            
+            .magazine-meta {
+                font-family: sans-serif;
+                font-size: 0.9rem;
+                color: var(--text-muted);
                 margin: 2rem 0;
             }
             
-            .prose code {
-                background: var(--primary-light);
-                padding: 0.2rem 0.4rem;
-                border-radius: 4px;
-                font-size: 0.9em;
+            .magazine-tag {
+                display: inline-block;
             }
             
-            .prose pre {
-                background: var(--card-bg);
-                padding: 1rem;
-                border-radius: var(--radius);
-                overflow-x: auto;
+            .magazine-date {
+                font-family: sans-serif;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: var(--text-muted);
+                margin-bottom: 2rem;
             }
             
-            .prose pre code {
-                background: none;
-                padding: 0;
+            .magazine-body {
+                font-size: 1.125rem;
+                line-height: 1.8;
+                font-family: Georgia, serif;
             }
             
-            .button-outline {
+            .magazine-actions {
+                display: flex;
+                gap: 2rem;
+                margin: 3rem 0;
+            }
+            
+            .magazine-link {
+                font-family: sans-serif;
+                font-size: 0.95rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                padding: 1rem 2rem;
+                background: var(--primary);
+                color: white;
+                display: inline-block;
+                transition: opacity 0.2s;
+            }
+            
+            .magazine-link:hover {
+                opacity: 0.8;
+            }
+            
+            .magazine-link.secondary {
                 background: transparent;
                 border: 2px solid var(--primary);
                 color: var(--primary);
             }
             
-            .button-outline:hover {
-                background: var(--primary);
-                color: white;
+            .magazine-footer {
+                text-align: center;
+                padding: 3rem 0;
+                font-family: sans-serif;
+                font-size: 0.9rem;
+                color: var(--text-muted);
+                border-top: 1px solid var(--border);
+            }
+            
+            @media (max-width: 768px) {
+                .magazine-hero-title {
+                    font-size: 3rem;
+                }
+                
+                .magazine-section-title,
+                .magazine-title {
+                    font-size: 2.5rem;
+                }
+                
+                .magazine-headline {
+                    font-size: 2rem;
+                }
+                
+                .magazine-masonry {
+                    grid-template-columns: 1fr;
+                }
+                
+                .magazine-blog-card.featured {
+                    grid-column: span 1;
+                }
             }
         </style>
 </head>
 <body>
 
             
-            <header class="sticky top-0 bg-background/95 backdrop-blur-sm border-b border-border z-50">
-                <nav class="container flex items-center justify-between h-16">
-                    <a href="/" class="text-xl font-bold hover:text-primary transition-colors">Portfolio</a>
-                    <div class="flex gap-6">
-                        <a href="/" class="hover:text-primary transition-colors">首页</a>
-                        <a href="/projects/" class="hover:text-primary transition-colors">项目</a>
-                        <a href="/blog/" class="hover:text-primary transition-colors">博客</a>
+            <header class="magazine-header">
+                <nav class="magazine-nav">
+                    <a href="/" class="magazine-logo">PORTFOLIO</a>
+                    <div class="magazine-menu">
+                        <a href="/">首页</a>
+                        <a href="/projects/">作品</a>
+                        <a href="/blog/">阅读</a>
                     </div>
                 </nav>
             </header>
         
-            <main class="container section">
-                <article class="max-w-3xl mx-auto">
-                    <h1 class="text-5xl font-bold mb-4">基于深度学习的图像识别算法优化研究</h1>
-                    <p class="text-muted-foreground mb-8">2026年1月12日</p>
-                    <img src="/uploads/blog/1768186678913-x6fbreev4.jpg" alt="基于深度学习的图像识别算法优化研究" class="w-full rounded-xl shadow-lg mb-8">
-                    <div class="prose prose-lg max-w-none">
-                        <p>基于深度学习的图像识别算法优化研究</p>
+            <main class="magazine-container">
+                <article class="magazine-article">
+                    
+                        <div class="magazine-feature-image">
+                            <img src="/uploads/blog/1768186678913-x6fbreev4.jpg" alt="基于深度学习的图像识别算法优化研究">
+                        </div>
+                    
+                    <div class="magazine-content">
+                        <h1 class="magazine-headline">基于深度学习的图像识别算法优化研究</h1>
+                        <p class="magazine-date">2026年1月12日</p>
+                        <div class="magazine-body">
+                            <p>基于深度学习的图像识别算法优化研究</p>
 
-                    </div>
-                    <div class="flex gap-2 mt-8 pt-8 border-t border-border">
-                        <span class="tag">基于深度学习的图像识别算法优化研究</span>
+                        </div>
+                        <div class="magazine-meta">
+                            <span class="magazine-tag">基于深度学习的图像识别算法优化研究</span>
+                        </div>
                     </div>
                 </article>
             </main>
             
-            <footer class="section border-t border-border">
-                <div class="container text-center text-muted-foreground">
-                    <p>© 2026 Portfolio. Generated by EasyPortfolio.</p>
-                </div>
+            <footer class="magazine-footer">
+                <p>© 2026 Portfolio</p>
             </footer>
         
         
